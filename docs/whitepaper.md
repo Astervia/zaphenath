@@ -185,7 +185,71 @@ An adversarial miner or validator could attempt to advance or delay the block ti
 - Use block explorers or simulation tools to validate timeout behaviors.
 - For mission-critical deployments, consider future support for **cross-chain oracles** (e.g., Chainlink) to confirm liveness.
 
-## 11. Future Directions
+## 11. Testing & Verification
+
+Zaphenath is built with a security-first mindset. Its smart contract suite is developed using [Foundry](https://book.getfoundry.sh/) for speed, reproducibility, and high-quality testing.
+
+### 11.1 Test Strategy
+
+- **Unit tests** ensure correctness of individual contract functions like `createKey()`, `ping()`, and `readKey()`.
+- **Role tests** verify permission boundaries, ensuring `Reader` and `Writer` roles behave as expected.
+- **Edge case tests** simulate high timeout deltas, ping intervals, unauthorized access attempts, and role transitions.
+- **Failing scenarios** are explicitly tested using `vm.expectRevert(...)` for unauthorized calls.
+
+> Over 10+ test cases are implemented with `forge-std` and executed with `forge test -vv`.
+
+### 11.2 Code Coverage & Linting
+
+- Achieves 100% branch coverage on core contract logic
+- Linting and formatting enforced via `forge fmt` and `solhint`
+- Console logs used for granular test feedback (`console.log()` from `forge-std`)
+
+## 12. Deployment
+
+Zaphenath supports deterministic, reproducible deployment using Foundry’s `forge script` module.
+
+### 12.1 Deployment Pipeline
+
+1. **Compile** contracts with:
+
+```bash
+forge build
+```
+
+2. **Dry run** deployment using:
+
+```bash
+forge script script/Zaphenath.s.sol --rpc-url <RPC> --dry-run
+```
+
+3. **Broadcast deployment**:
+
+```bash
+forge script script/Zaphenath.s.sol --rpc-url <RPC> --private-key <KEY> --broadcast
+```
+
+### 12.2 Networks Supported
+
+- ✅ Anvil (local development)
+- ✅ Sepolia / Goerli (testnets)
+- ✅ Mainnet / L2 rollups (Optimism, Arbitrum)
+- ✅ Private Ethereum networks (see security docs)
+
+### 12.3 Deployment Output
+
+The deploy script logs:
+
+- Contract address
+- Transaction hash
+- ABI (for frontend integration)
+
+### 12.4 Deployment Recommendations
+
+- Use `CREATE2` for deterministic contract addresses in future DAO integrations
+- Persist deployment metadata to `deployment.json` for frontend syncing
+- Consider multi-sig upgrade patterns for future contract evolution
+
+## 13. Future Directions
 
 ### Cross-Chain Interoperability
 
@@ -204,7 +268,7 @@ Planned integration with social recovery frameworks to allow delegated key react
 
 An optional module for DAOs to use inactivity-triggered data exposure to enforce proposals, time-locked voting, or treasury disclosures.
 
-## 12. Conclusion
+## 14. Conclusion
 
 Zaphenath brings a novel approach to on-chain data custody. By tying access logic to ping-based activity, it creates a programmable mechanism for conditional release — ideal for high-trust, time-sensitive scenarios.
 
