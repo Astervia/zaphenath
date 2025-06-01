@@ -2,6 +2,8 @@
 
 **Zaphenath** is a smart contract system for secure key-value storage with inactivity-based conditional access. It supports role-based access control, data privacy before inactivity timeouts, and multi-user custodianship. Designed for sensitive data management, such as wills or internal company secrets.
 
+> 🧭 Live docs: [https://zaphenath.astervia.tech](https://zaphenath.astervia.tech)
+
 ## 🛠 Features
 
 - Create, read, update, and delete encrypted key data.
