@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://zaphenath.astervia.tech/getting-started/deployment/">
+        <link rel="canonical" href="https://zaphenath.astervia.tech/security/best-practices/">
       
       
-        <link rel="prev" href="../installation/">
+        <link rel="prev" href="../dos/">
       
       
-        <link rel="next" href="../../contracts/zaphenath/">
+        <link rel="next" href="../private-blockchain/">
       
       
       <link rel="icon" href="../../assets/images/favicon-blue.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Deployment - Zaphenath</title>
+        <title>Smart Contract Best Practices - Zaphenath</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment" class="md-skip">
+        <a href="#smart-contract-best-practices" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment
+              Smart Contract Best Practices
             
           </span>
         </div>
@@ -257,20 +257,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -286,7 +284,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -300,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -323,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -343,32 +341,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Deployment
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../getting-started/deployment/" class="md-nav__link">
         
   
   
@@ -379,110 +355,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-locally-with-anvil" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying Locally with Anvil
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying Locally with Anvil">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-start-a-local-testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Start a local testnet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-run-the-deploy-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Run the deploy script
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-to-a-public-testnet-eg-sepolia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying to a Public Testnet (e.g., Sepolia)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying to a Public Testnet (e.g., Sepolia)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-set-environment-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Set environment variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Deploy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Output
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -773,18 +645,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -800,7 +674,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -814,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -837,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/time-oracle/" class="md-nav__link">
+      <a href="../time-oracle/" class="md-nav__link">
         
   
   
@@ -860,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/roles/" class="md-nav__link">
+      <a href="../roles/" class="md-nav__link">
         
   
   
@@ -883,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/dos/" class="md-nav__link">
+      <a href="../dos/" class="md-nav__link">
         
   
   
@@ -903,10 +777,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../security/best-practices/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Smart Contract Best Practices
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -917,6 +813,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-structure-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Code Structure Guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suggested-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Coverage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Audit Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-upgrade-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Deployment &amp; Upgrade Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Operational Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -929,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/private-blockchain/" class="md-nav__link">
+      <a href="../private-blockchain/" class="md-nav__link">
         
   
   
@@ -1252,28 +1228,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deploying-locally-with-anvil" class="md-nav__link">
+  <a href="#code-structure-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying Locally with Anvil
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying Locally with Anvil">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-start-a-local-testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Start a local testnet
+      🔒 Code Structure Guidelines
     </span>
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Testing Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing Strategy">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#2-run-the-deploy-script" class="md-nav__link">
+  <a href="#suggested-coverage" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Run the deploy script
+      Suggested Coverage
     </span>
   </a>
   
@@ -1285,51 +1261,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-to-a-public-testnet-eg-sepolia" class="md-nav__link">
+  <a href="#audit-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying to a Public Testnet (e.g., Sepolia)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying to a Public Testnet (e.g., Sepolia)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-set-environment-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Set environment variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Deploy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Output
+      🔍 Audit Considerations
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#deployment-upgrade-strategy" class="md-nav__link">
     <span class="md-ellipsis">
-      Troubleshooting
+      ⚙️ Deployment &amp; Upgrade Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Operational Best Practices
     </span>
   </a>
   
@@ -1351,42 +1303,82 @@
 
 
 
-<h1 id="deployment">Deployment</h1>
-<p>This guide walks you through deploying the Zaphenath contract using Foundry scripts.</p>
-<h2 id="deploying-locally-with-anvil">Deploying Locally with Anvil</h2>
-<h3 id="1-start-a-local-testnet">1. Start a local testnet</h3>
-<pre><code class="language-bash">anvil
-</code></pre>
-<p>This launches a local Ethereum node with test accounts.</p>
-<h3 id="2-run-the-deploy-script">2. Run the deploy script</h3>
-<p>In a separate terminal:</p>
-<pre><code class="language-bash">forge script script/Zaphenath.s.sol \
-  --broadcast \
-  --rpc-url http://localhost:8545
-</code></pre>
-<p>You should see output showing the deployed contract address.</p>
-<h2 id="deploying-to-a-public-testnet-eg-sepolia">Deploying to a Public Testnet (e.g., Sepolia)</h2>
-<h3 id="1-set-environment-variables">1. Set environment variables</h3>
-<p>Export your private key and RPC URL. For safety, use <code>.env</code> in real projects.</p>
-<pre><code class="language-bash">export PRIVATE_KEY=your_private_key
-export RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
-</code></pre>
-<h3 id="2-deploy">2. Deploy</h3>
-<pre><code class="language-bash">forge script script/Zaphenath.s.sol \
-  --broadcast \
-  --rpc-url $RPC_URL \
-  --private-key $PRIVATE_KEY
-</code></pre>
-<h2 id="deployment-output">Deployment Output</h2>
-<p>After deployment, Foundry logs the contract address. Save it for contract interactions.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h1 id="smart-contract-best-practices">✅ Smart Contract Best Practices</h1>
+<p>Zaphenath is designed with minimalism, modularity, and auditability in mind. This page outlines best practices for writing, auditing, and integrating contracts similar to Zaphenath in production environments.</p>
+<h2 id="code-structure-guidelines">🔒 Code Structure Guidelines</h2>
 <ul>
-<li><strong>Missing console logs?</strong> Ensure you're using <code>console.log</code> from <code>forge-std</code>.</li>
-<li><strong>Contract not found?</strong> Verify your paths in <code>import</code> and <code>foundry.toml</code>.</li>
-<li><strong>Network errors?</strong> Make sure RPC URLs and keys are correctly set.</li>
+<li><strong>Use explicit access control</strong> — Every mutating function is guarded by <code>onlyRoleOrAbove()</code>.</li>
+<li><strong>Avoid nested mappings inside structs</strong> — Keep data layout readable and storage-efficient.</li>
+<li><strong>Immutable logic flow</strong> — Avoid external calls, unbounded loops, or delegatecall.</li>
+<li><strong>Event coverage</strong> — Emit events on all mutating actions (create, update, delete, assign).</li>
+</ul>
+<h2 id="testing-strategy">🧪 Testing Strategy</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit Tests</td>
+<td>Foundry (<code>forge</code>)</td>
+<td>Validate isolated contract behavior</td>
+</tr>
+<tr>
+<td>Integration</td>
+<td>Foundry + scripts</td>
+<td>End-to-end flow across roles and timeouts</td>
+</tr>
+<tr>
+<td>Fuzzing</td>
+<td>Foundry</td>
+<td>Randomized role/path combinations</td>
+</tr>
+<tr>
+<td>Time Simulation</td>
+<td><code>vm.warp()</code></td>
+<td>Timeout verification</td>
+</tr>
+<tr>
+<td>Revert Checks</td>
+<td><code>expectRevert()</code></td>
+<td>Ensure security fails when expected</td>
+</tr>
+</tbody>
+</table>
+<h3 id="suggested-coverage">Suggested Coverage</h3>
+<ul>
+<li>Ping behavior &amp; logging</li>
+<li>Role enforcement and misassignment</li>
+<li>Timeout boundary enforcement</li>
+<li>Unauthorized access attempts</li>
+</ul>
+<h2 id="audit-considerations">🔍 Audit Considerations</h2>
+<ul>
+<li><strong>Storage collisions</strong> — Ensure mappings are unique per key</li>
+<li><strong>Gas analysis</strong> — Measure costs of <code>createKey</code>, <code>ping</code>, <code>readKey</code>, and <code>deleteKey</code></li>
+<li><strong>Re-entrancy</strong> — Not possible here, but audit hooks before adding external integrations</li>
+<li><strong>Invariant checks</strong> — For example: a Writer must not access keys unless timeout passed</li>
+</ul>
+<h2 id="deployment-upgrade-strategy">⚙️ Deployment &amp; Upgrade Strategy</h2>
+<ul>
+<li><strong>Immutable core</strong> — Core Zaphenath contracts are designed for permanence</li>
+<li><strong>Proxy support (optional)</strong> — Wrap in upgradeable proxy pattern only if needed</li>
+<li><strong>Scripted deployment</strong> — Use <code>forge script</code> to avoid manual steps</li>
+<li><strong>Post-deploy tests</strong> — Immediately test timeout logic after deployment</li>
+</ul>
+<h2 id="operational-best-practices">🔁 Operational Best Practices</h2>
+<ul>
+<li>Monitor for excessive gas on specific keys</li>
+<li>Alert on <code>CustodianUpdated</code> or <code>readKey</code> usage</li>
+<li>Rotate test keys in staging environments</li>
+<li>Maintain off-chain documentation of key purposes and access levels</li>
 </ul>
 <hr />
-<p>➡️ Next: <a href="../../contracts/zaphenath/">Zaphenath Contract Details</a></p>
+<p>➡️ Next: <a href="../private-blockchain/">Deploying on Private Chains</a></p>
 
 
 

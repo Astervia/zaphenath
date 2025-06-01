@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://zaphenath.astervia.tech/getting-started/deployment/">
+        <link rel="canonical" href="https://zaphenath.astervia.tech/security/roles/">
       
       
-        <link rel="prev" href="../installation/">
+        <link rel="prev" href="../time-oracle/">
       
       
-        <link rel="next" href="../../contracts/zaphenath/">
+        <link rel="next" href="../dos/">
       
       
       <link rel="icon" href="../../assets/images/favicon-blue.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Deployment - Zaphenath</title>
+        <title>Role Abuse & Privilege Escalation - Zaphenath</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment" class="md-skip">
+        <a href="#role-abuse-privilege-escalation" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment
+              Role Abuse & Privilege Escalation
             
           </span>
         </div>
@@ -257,20 +257,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -286,7 +284,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -300,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -323,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -343,32 +341,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Deployment
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../getting-started/deployment/" class="md-nav__link">
         
   
   
@@ -379,110 +355,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-locally-with-anvil" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying Locally with Anvil
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying Locally with Anvil">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-start-a-local-testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Start a local testnet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-run-the-deploy-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Run the deploy script
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-to-a-public-testnet-eg-sepolia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying to a Public Testnet (e.g., Sepolia)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying to a Public Testnet (e.g., Sepolia)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-set-environment-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Set environment variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Deploy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Output
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -773,18 +645,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -800,7 +674,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -814,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -837,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/time-oracle/" class="md-nav__link">
+      <a href="../time-oracle/" class="md-nav__link">
         
   
   
@@ -857,10 +731,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../security/roles/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Role Abuse & Privilege Escalation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -871,6 +767,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#role-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Role Definitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-vector-improper-role-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧨 Attack Vector: Improper Role Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧨 Attack Vector: Improper Role Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impact
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚧 Mitigations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚧 Mitigations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-explicit-role-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Explicit Role Gates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-public-events-for-role-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Public Events for Role Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-minimal-default-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Minimal Default Permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔭 Future Improvements
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -883,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/dos/" class="md-nav__link">
+      <a href="../dos/" class="md-nav__link">
         
   
   
@@ -906,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/best-practices/" class="md-nav__link">
+      <a href="../best-practices/" class="md-nav__link">
         
   
   
@@ -929,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/private-blockchain/" class="md-nav__link">
+      <a href="../private-blockchain/" class="md-nav__link">
         
   
   
@@ -1252,28 +1270,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deploying-locally-with-anvil" class="md-nav__link">
+  <a href="#role-definitions" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying Locally with Anvil
+      🔁 Role Definitions
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deploying Locally with Anvil">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-vector-improper-role-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧨 Attack Vector: Improper Role Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧨 Attack Vector: Improper Role Assignment">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-start-a-local-testnet" class="md-nav__link">
+  <a href="#scenario" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Start a local testnet
+      Scenario
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-run-the-deploy-script" class="md-nav__link">
+  <a href="#impact" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Run the deploy script
+      Impact
     </span>
   </a>
   
@@ -1285,28 +1312,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-to-a-public-testnet-eg-sepolia" class="md-nav__link">
+  <a href="#mitigations" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying to a Public Testnet (e.g., Sepolia)
+      🚧 Mitigations
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deploying to a Public Testnet (e.g., Sepolia)">
+    <nav class="md-nav" aria-label="🚧 Mitigations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-set-environment-variables" class="md-nav__link">
+  <a href="#1-explicit-role-gates" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Set environment variables
+      1. Explicit Role Gates
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-deploy" class="md-nav__link">
+  <a href="#2-public-events-for-role-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Deploy
+      2. Public Events for Role Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-minimal-default-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Minimal Default Permissions
     </span>
   </a>
   
@@ -1318,18 +1354,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-output" class="md-nav__link">
+  <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Deployment Output
+      ✅ Best Practices
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#future-improvements" class="md-nav__link">
     <span class="md-ellipsis">
-      Troubleshooting
+      🔭 Future Improvements
     </span>
   </a>
   
@@ -1351,42 +1387,104 @@
 
 
 
-<h1 id="deployment">Deployment</h1>
-<p>This guide walks you through deploying the Zaphenath contract using Foundry scripts.</p>
-<h2 id="deploying-locally-with-anvil">Deploying Locally with Anvil</h2>
-<h3 id="1-start-a-local-testnet">1. Start a local testnet</h3>
-<pre><code class="language-bash">anvil
+<h1 id="role-abuse-privilege-escalation">🔐 Role Abuse &amp; Privilege Escalation</h1>
+<p>Role-based access control is core to Zaphenath’s architecture. The <code>Role</code> enum (None, Reader, Writer, Owner) defines what each address can do for a specific key. Improper assignment or unchecked escalation can compromise the protocol’s security.</p>
+<h2 id="role-definitions">🔁 Role Definitions</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Access Level</th>
+<th>Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>0</td>
+<td>No access</td>
+</tr>
+<tr>
+<td>Reader</td>
+<td>1</td>
+<td>Can read the key after timeout</td>
+</tr>
+<tr>
+<td>Writer</td>
+<td>2</td>
+<td>Can update key metadata and delete the key</td>
+</tr>
+<tr>
+<td>Owner</td>
+<td>3</td>
+<td>Full control including assigning roles, managing custodians and reading before timeout (if enabled)</td>
+</tr>
+</tbody>
+</table>
+<p>Each <code>KeyData</code> instance defines custodian roles using:</p>
+<pre><code class="language-solidity">mapping(address =&gt; Custodian)
 </code></pre>
-<p>This launches a local Ethereum node with test accounts.</p>
-<h3 id="2-run-the-deploy-script">2. Run the deploy script</h3>
-<p>In a separate terminal:</p>
-<pre><code class="language-bash">forge script script/Zaphenath.s.sol \
-  --broadcast \
-  --rpc-url http://localhost:8545
-</code></pre>
-<p>You should see output showing the deployed contract address.</p>
-<h2 id="deploying-to-a-public-testnet-eg-sepolia">Deploying to a Public Testnet (e.g., Sepolia)</h2>
-<h3 id="1-set-environment-variables">1. Set environment variables</h3>
-<p>Export your private key and RPC URL. For safety, use <code>.env</code> in real projects.</p>
-<pre><code class="language-bash">export PRIVATE_KEY=your_private_key
-export RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
-</code></pre>
-<h3 id="2-deploy">2. Deploy</h3>
-<pre><code class="language-bash">forge script script/Zaphenath.s.sol \
-  --broadcast \
-  --rpc-url $RPC_URL \
-  --private-key $PRIVATE_KEY
-</code></pre>
-<h2 id="deployment-output">Deployment Output</h2>
-<p>After deployment, Foundry logs the contract address. Save it for contract interactions.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Where a <code>Custodian</code> struct contains both <code>role</code> and <code>canPing</code>.</p>
+<h2 id="attack-vector-improper-role-assignment">🧨 Attack Vector: Improper Role Assignment</h2>
+<h3 id="scenario">Scenario</h3>
+<p>An owner mistakenly sets a <code>Reader</code> as a <code>Writer</code>, or enables <code>readableBeforeTimeout</code> and sets a role too high.</p>
+<h3 id="impact">Impact</h3>
 <ul>
-<li><strong>Missing console logs?</strong> Ensure you're using <code>console.log</code> from <code>forge-std</code>.</li>
-<li><strong>Contract not found?</strong> Verify your paths in <code>import</code> and <code>foundry.toml</code>.</li>
-<li><strong>Network errors?</strong> Make sure RPC URLs and keys are correctly set.</li>
+<li>Custodian gains ability to <strong>delete</strong> or <strong>overwrite</strong> key data.</li>
+<li>Confidential data becomes accessible <strong>before timeout</strong>.</li>
+</ul>
+<h2 id="mitigations">🚧 Mitigations</h2>
+<h3 id="1-explicit-role-gates">1. Explicit Role Gates</h3>
+<p>Functions use the <code>onlyRoleOrAbove</code> modifier:</p>
+<pre><code class="language-solidity">require(uint8(callerRole) &gt;= uint8(minimumRole), &quot;Insufficient role&quot;);
+</code></pre>
+<p>This enforces strict access thresholds.</p>
+<h3 id="2-public-events-for-role-changes">2. Public Events for Role Changes</h3>
+<p>All custodian assignments trigger:</p>
+<pre><code class="language-solidity">CustodianUpdated(keyId, user, role, canPing)
+</code></pre>
+<p>Allowing off-chain monitoring of escalations.</p>
+<h3 id="3-minimal-default-permissions">3. Minimal Default Permissions</h3>
+<p>When a key is created:</p>
+<ul>
+<li>No custodians are assigned.</li>
+<li>All access must be explicitly granted by the owner.</li>
+</ul>
+<h2 id="best-practices">✅ Best Practices</h2>
+<table>
+<thead>
+<tr>
+<th>Recommendation</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start with <code>Role.Reader</code></td>
+<td>Avoid accidental write/delete privileges</td>
+</tr>
+<tr>
+<td>Use <code>canPing = false</code> unless needed</td>
+<td>Prevent unintended ping interactions</td>
+</tr>
+<tr>
+<td>Revoke roles explicitly</td>
+<td>Use <code>removeCustodian()</code> when access ends</td>
+</tr>
+<tr>
+<td>Monitor <code>CustodianUpdated</code> events</td>
+<td>Ensure no privilege creep occurs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="future-improvements">🔭 Future Improvements</h2>
+<ul>
+<li>UI-level simulation of role effects before confirmation</li>
+<li>Multi-sig confirmation for <code>Role.Writer</code> or <code>Owner</code> assignments</li>
+<li>Role expiration timestamps or time-bound roles</li>
 </ul>
 <hr />
-<p>➡️ Next: <a href="../../contracts/zaphenath/">Zaphenath Contract Details</a></p>
+<p>➡️ Next: <a href="../dos/">Gas &amp; Denial of Service</a></p>
 
 
 

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://zaphenath.astervia.tech/getting-started/deployment/">
+        <link rel="canonical" href="https://zaphenath.astervia.tech/security/time-oracle/">
       
       
-        <link rel="prev" href="../installation/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../contracts/zaphenath/">
+        <link rel="next" href="../roles/">
       
       
       <link rel="icon" href="../../assets/images/favicon-blue.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Deployment - Zaphenath</title>
+        <title>Time Oracle Desync - Zaphenath</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment" class="md-skip">
+        <a href="#time-oracle-desynchronization-attack" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment
+              Time Oracle Desync
             
           </span>
         </div>
@@ -257,20 +257,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -286,7 +284,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -300,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         
   
   
@@ -323,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -343,32 +341,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Deployment
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../getting-started/deployment/" class="md-nav__link">
         
   
   
@@ -379,110 +355,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-locally-with-anvil" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying Locally with Anvil
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying Locally with Anvil">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-start-a-local-testnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Start a local testnet
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-run-the-deploy-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Run the deploy script
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-to-a-public-testnet-eg-sepolia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deploying to a Public Testnet (e.g., Sepolia)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying to a Public Testnet (e.g., Sepolia)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-set-environment-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Set environment variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Deploy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Output
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -773,18 +645,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -800,7 +674,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -814,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -834,10 +708,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../security/time-oracle/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Time Oracle Desync
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -848,6 +744,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ The Risk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitigations-in-zaphenath" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Mitigations in Zaphenath
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Mitigations in Zaphenath">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-enforced-timeout-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Enforced Timeout Thresholds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ping-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ping Enforcement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-no-timestamp-comparisons-between-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. No Timestamp Comparisons Between Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-no-scheduled-callbacks-or-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. No Scheduled Callbacks or Automation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-usage-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Safe Usage Guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-enhancements-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Suggested Enhancements (Future Work)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -860,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/roles/" class="md-nav__link">
+      <a href="../roles/" class="md-nav__link">
         
   
   
@@ -883,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/dos/" class="md-nav__link">
+      <a href="../dos/" class="md-nav__link">
         
   
   
@@ -906,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/best-practices/" class="md-nav__link">
+      <a href="../best-practices/" class="md-nav__link">
         
   
   
@@ -929,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/private-blockchain/" class="md-nav__link">
+      <a href="../private-blockchain/" class="md-nav__link">
         
   
   
@@ -1252,28 +1246,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deploying-locally-with-anvil" class="md-nav__link">
+  <a href="#the-risk" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying Locally with Anvil
+      ⚠️ The Risk
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Deploying Locally with Anvil">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mitigations-in-zaphenath" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Mitigations in Zaphenath
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Mitigations in Zaphenath">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-start-a-local-testnet" class="md-nav__link">
+  <a href="#1-enforced-timeout-thresholds" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Start a local testnet
+      1. Enforced Timeout Thresholds
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-run-the-deploy-script" class="md-nav__link">
+  <a href="#2-ping-enforcement" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Run the deploy script
+      2. Ping Enforcement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-no-timestamp-comparisons-between-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. No Timestamp Comparisons Between Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-no-scheduled-callbacks-or-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. No Scheduled Callbacks or Automation
     </span>
   </a>
   
@@ -1285,51 +1306,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-to-a-public-testnet-eg-sepolia" class="md-nav__link">
+  <a href="#safe-usage-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying to a Public Testnet (e.g., Sepolia)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying to a Public Testnet (e.g., Sepolia)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-set-environment-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Set environment variables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Deploy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Output
+      ✅ Safe Usage Guidelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#suggested-enhancements-future-work" class="md-nav__link">
     <span class="md-ellipsis">
-      Troubleshooting
+      🛠 Suggested Enhancements (Future Work)
     </span>
   </a>
   
@@ -1351,42 +1339,64 @@
 
 
 
-<h1 id="deployment">Deployment</h1>
-<p>This guide walks you through deploying the Zaphenath contract using Foundry scripts.</p>
-<h2 id="deploying-locally-with-anvil">Deploying Locally with Anvil</h2>
-<h3 id="1-start-a-local-testnet">1. Start a local testnet</h3>
-<pre><code class="language-bash">anvil
-</code></pre>
-<p>This launches a local Ethereum node with test accounts.</p>
-<h3 id="2-run-the-deploy-script">2. Run the deploy script</h3>
-<p>In a separate terminal:</p>
-<pre><code class="language-bash">forge script script/Zaphenath.s.sol \
-  --broadcast \
-  --rpc-url http://localhost:8545
-</code></pre>
-<p>You should see output showing the deployed contract address.</p>
-<h2 id="deploying-to-a-public-testnet-eg-sepolia">Deploying to a Public Testnet (e.g., Sepolia)</h2>
-<h3 id="1-set-environment-variables">1. Set environment variables</h3>
-<p>Export your private key and RPC URL. For safety, use <code>.env</code> in real projects.</p>
-<pre><code class="language-bash">export PRIVATE_KEY=your_private_key
-export RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
-</code></pre>
-<h3 id="2-deploy">2. Deploy</h3>
-<pre><code class="language-bash">forge script script/Zaphenath.s.sol \
-  --broadcast \
-  --rpc-url $RPC_URL \
-  --private-key $PRIVATE_KEY
-</code></pre>
-<h2 id="deployment-output">Deployment Output</h2>
-<p>After deployment, Foundry logs the contract address. Save it for contract interactions.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h1 id="time-oracle-desynchronization-attack">🕒 Time Oracle Desynchronization Attack</h1>
+<p>Zaphenath uses <code>block.timestamp</code> to enforce inactivity timeouts. While this is common in Solidity contracts, it introduces a subtle but important class of risk: <strong>timestamp manipulation by block producers</strong>.</p>
+<h2 id="the-risk">⚠️ The Risk</h2>
+<p>Validators or miners may slightly adjust <code>block.timestamp</code> within a protocol-defined drift range (typically ±15 seconds). This means:</p>
 <ul>
-<li><strong>Missing console logs?</strong> Ensure you're using <code>console.log</code> from <code>forge-std</code>.</li>
-<li><strong>Contract not found?</strong> Verify your paths in <code>import</code> and <code>foundry.toml</code>.</li>
-<li><strong>Network errors?</strong> Make sure RPC URLs and keys are correctly set.</li>
+<li>A <strong>malicious validator</strong> could slightly accelerate block time to trigger a timeout earlier than expected.</li>
+<li>Or they could <strong>delay timeout execution</strong>, giving a custodian less time to read the key.</li>
+</ul>
+<p>While these shifts are small, their <strong>impact scales</strong> with:</p>
+<ul>
+<li>Short timeout configurations (e.g., under 1 hour)</li>
+<li>Misconfigured <code>readableBeforeTimeout</code> access rules</li>
+</ul>
+<h2 id="mitigations-in-zaphenath">🔒 Mitigations in Zaphenath</h2>
+<h3 id="1-enforced-timeout-thresholds">1. Enforced Timeout Thresholds</h3>
+<p>Users are expected to set <strong>timeouts of at least 1 day</strong>, making manipulation by ±15s negligible.</p>
+<h3 id="2-ping-enforcement">2. Ping Enforcement</h3>
+<p>Pings reset the timeout timer and are <strong>logged on-chain</strong>, providing evidence of liveness.</p>
+<h3 id="3-no-timestamp-comparisons-between-blocks">3. No Timestamp Comparisons Between Blocks</h3>
+<p>The contract only compares <code>block.timestamp</code> against <code>lastPing</code>, avoiding logic that relies on <strong>absolute time ranges</strong>.</p>
+<h3 id="4-no-scheduled-callbacks-or-automation">4. No Scheduled Callbacks or Automation</h3>
+<p>Zaphenath doesn’t use cron-like scheduling. Every action is explicitly triggered by user or custodian calls, reducing timing dependencies.</p>
+<h2 id="safe-usage-guidelines">✅ Safe Usage Guidelines</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timeout &lt; 1 hour</td>
+<td>Not recommended</td>
+</tr>
+<tr>
+<td>Timeout ≥ 1 day</td>
+<td>Safe for most use cases</td>
+</tr>
+<tr>
+<td>Critical secrets (e.g. wills)</td>
+<td>Use 7–30 days timeout with custodial pings</td>
+</tr>
+<tr>
+<td>Time-sensitive access</td>
+<td>Monitor blockchain time closely</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="suggested-enhancements-future-work">🛠 Suggested Enhancements (Future Work)</h2>
+<ul>
+<li><strong>Layer-2 timestamp validation</strong>: Accept only L1 timestamps in rollup contexts.</li>
+<li><strong>Cross-chain oracle integration</strong>: To validate that a ping came after a real-world time threshold.</li>
+<li><strong>zkPing</strong>: Off-chain proofs of liveness, verified on-chain without <code>block.timestamp</code>.</li>
 </ul>
 <hr />
-<p>➡️ Next: <a href="../../contracts/zaphenath/">Zaphenath Contract Details</a></p>
+<p>➡️ Next: <a href="../roles/">Role Abuse &amp; Privilege Escalation</a></p>
 
 
 
