@@ -21,6 +21,8 @@ extra:
 
 nav:
   - Home: index.md
+  - White Paper: whitepaper.md
+  - Business White Paper: business-whitepaper.md
   - Getting Started:
       - Overview: getting-started/index.md
       - Installation: getting-started/installation.md
@@ -35,10 +37,16 @@ nav:
       - Ping Mechanism: usage/ping.md
       - Key Lifecycle: usage/key-lifecycle.md
       - Examples: usage/examples.md
+  - Security:
+      - Overview: security/index.md
+      - Time Oracle Desync: security/time-oracle.md
+      - Role Abuse & Privilege Escalation: security/roles.md
+      - Gas & Denial of Service: security/dos.md
+      - Smart Contract Best Practices: security/best-practices.md
+      - Deploying on Private Chains: security/private-blockchain.md
   - Testing:
       - Test Coverage: testing/overview.md
       - Writing Tests: testing/writing-tests.md
-
   - Support:
       - Plans: support/plans.md
       - Consulting: support/consulting.md
