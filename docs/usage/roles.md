@@ -4,12 +4,12 @@ Zaphenath uses a role-based access control system to manage interactions with ke
 
 ## 🔑 Roles
 
-| Role   | Access Level | Capabilities                                                                   |
-| ------ | ------------ | ------------------------------------------------------------------------------ |
-| None   | 0            | No access                                                                      |
-| Reader | 1            | Can read the key after timeout or earlier if allowed                           |
-| Writer | 2            | Can update key metadata and delete the key                                     |
-| Owner  | 3            | Full control including assigning roles and reading before timeout (if enabled) |
+| Role   | Access Level | Capabilities                                                                                        |
+| ------ | ------------ | --------------------------------------------------------------------------------------------------- |
+| None   | 0            | No access                                                                                           |
+| Reader | 1            | Can read the key after timeout                                                                      |
+| Writer | 2            | Can update key metadata and delete the key                                                          |
+| Owner  | 3            | Full control including assigning roles, managing custodians and reading before timeout (if enabled) |
 
 ## 👥 Custodians
 
