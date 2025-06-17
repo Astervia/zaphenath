@@ -83,7 +83,9 @@ contract ZaphenathTest is Test {
     }
 
     function testCustodianCannotPingIfNotAllowed() public {
-        console.log("Rachel assigning Jacob as Writer with no ping permission...");
+        console.log(
+            "Rachel assigning Jacob as Writer with no ping permission..."
+        );
         vm.prank(rachel);
         zaph.setCustodian(keyId, rachel, jacob, Role.Writer, false);
 
@@ -128,10 +130,17 @@ contract ZaphenathTest is Test {
     }
 
     function testKeyNotReadableBeforeTimeoutIfNotAllowed() public {
-        console.log("Creating a key for Rachel that is NOT readable before timeout...");
+        console.log(
+            "Creating a key for Rachel that is NOT readable before timeout..."
+        );
         bytes32 hiddenKeyId = keccak256("mysterion");
         vm.prank(rachel);
-        zaph.createKey(hiddenKeyId, bytes("Secret Before Timeout"), 1 days, false);
+        zaph.createKey(
+            hiddenKeyId,
+            bytes("Secret Before Timeout"),
+            1 days,
+            false
+        );
 
         console.log("Rachel tries to read it before timeout...");
         vm.prank(rachel);

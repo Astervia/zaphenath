@@ -12,10 +12,18 @@ contract Zaphenath {
     event KeyDeleted(bytes32 indexed keyId);
     event KeyUpdated(bytes32 indexed keyId);
     event Pinged(bytes32 indexed keyId, uint256 timestamp);
-    event CustodianUpdated(bytes32 indexed keyId, address indexed user, Role role, bool canPing);
+    event CustodianUpdated(
+        bytes32 indexed keyId,
+        address indexed user,
+        Role role,
+        bool canPing
+    );
 
     // Helper to derive full key
-    function getFullKey(bytes32 keyId, address owner) public pure returns (bytes32) {
+    function getFullKey(
+        bytes32 keyId,
+        address owner
+    ) public pure returns (bytes32) {
         return keccak256(abi.encodePacked(owner, keyId));
     }
 
@@ -25,7 +33,11 @@ contract Zaphenath {
         _;
     }
 
-    modifier onlyRoleOrAbove(bytes32 keyId, address owner, Role minimumRole) {
+    modifier onlyRoleOrAbove(
+        bytes32 keyId,
+        address owner,
+        Role minimumRole
+    ) {
         bytes32 fullKey = getFullKey(keyId, owner);
         Role callerRole = keys[fullKey].custodians[msg.sender].role;
 
@@ -42,7 +54,11 @@ contract Zaphenath {
         _;
     }
 
-    function createKey(bytes32 keyId, bytes calldata data, uint256 timeout, bool readableBeforeTimeout) external {
+    function createKey(
+        bytes32 keyId,
+        bytes calldata data,
+        uint256 timeout
+    ) external {
         bytes32 fullKey = getFullKey(keyId, msg.sender);
         require(!keys[fullKey].exists, "Key already exists");
 
@@ -50,7 +66,6 @@ contract Zaphenath {
         key.owner = msg.sender;
         key.data = data;
         key.timeout = timeout;
-        key.readableBeforeTimeout = readableBeforeTimeout;
         key.lastPing = block.timestamp;
         key.exists = true;
 
@@ -61,32 +76,43 @@ contract Zaphenath {
         bytes32 keyId,
         address owner,
         bytes calldata newData,
-        uint256 newTimeout,
-        bool newReadableBeforeTimeout
-    ) external onlyRoleOrAbove(keyId, owner, Role.Writer) keyExists(keyId, owner) {
+        uint256 newTimeout
+    )
+        external
+        onlyRoleOrAbove(keyId, owner, Role.Writer)
+        keyExists(keyId, owner)
+    {
         bytes32 fullKey = getFullKey(keyId, owner);
         KeyData storage key = keys[fullKey];
         key.data = newData;
         key.timeout = newTimeout;
-        key.readableBeforeTimeout = newReadableBeforeTimeout;
 
         emit KeyUpdated(keyId);
     }
 
-    function ping(bytes32 keyId, address owner) external keyExists(keyId, owner) {
+    function ping(
+        bytes32 keyId,
+        address owner
+    ) external keyExists(keyId, owner) {
         bytes32 fullKey = getFullKey(keyId, owner);
         KeyData storage key = keys[fullKey];
         Custodian memory custodian = key.custodians[msg.sender];
 
-        require(msg.sender == key.owner || custodian.canPing, "Not authorized to ping");
+        require(
+            msg.sender == key.owner || custodian.canPing,
+            "Not authorized to ping"
+        );
 
         key.lastPing = block.timestamp;
         emit Pinged(keyId, block.timestamp);
     }
 
-    // Not marked as view: requires transaction for msg.sender verification
-    function readKey(bytes32 keyId, address owner)
+    function readKey(
+        bytes32 keyId,
+        address owner
+    )
         external
+        view
         keyExists(keyId, owner)
         onlyRoleOrAbove(keyId, owner, Role.Reader)
         returns (bytes memory)
@@ -95,15 +121,18 @@ contract Zaphenath {
         KeyData storage key = keys[fullKey];
         uint256 timeSincePing = block.timestamp - key.lastPing;
 
-        if (timeSincePing <= key.timeout) {
-            bool isOwner = owner == msg.sender;
-            require(key.readableBeforeTimeout && isOwner, "Data not available before timeout");
-        }
+        require(
+            timeSincePing > key.timeout,
+            "Data not available before timeout"
+        );
 
         return key.data;
     }
 
-    function deleteKey(bytes32 keyId, address owner)
+    function deleteKey(
+        bytes32 keyId,
+        address owner
+    )
         external
         keyExists(keyId, owner)
         onlyRoleOrAbove(keyId, owner, Role.Writer)
@@ -113,7 +142,13 @@ contract Zaphenath {
         emit KeyDeleted(keyId);
     }
 
-    function setCustodian(bytes32 keyId, address owner, address user, Role role, bool canPing)
+    function setCustodian(
+        bytes32 keyId,
+        address owner,
+        address user,
+        Role role,
+        bool canPing
+    )
         external
         keyExists(keyId, owner)
         onlyRoleOrAbove(keyId, owner, Role.Owner)
@@ -123,7 +158,11 @@ contract Zaphenath {
         emit CustodianUpdated(keyId, user, role, canPing);
     }
 
-    function removeCustodian(bytes32 keyId, address owner, address user)
+    function removeCustodian(
+        bytes32 keyId,
+        address owner,
+        address user
+    )
         external
         keyExists(keyId, owner)
         onlyRoleOrAbove(keyId, owner, Role.Owner)

@@ -25,8 +25,8 @@ The protocol does _not_ rely on external oracles, off-chain cron jobs, or schedu
 - **Gas-Based Denial of Service (DoS)**  
   Storage expansion, frequent pings, or malicious keys could exhaust gas. The design minimizes state complexity and avoids loops over dynamic mappings.
 
-- **Early Disclosure via Misconfiguration**  
-  A careless setting of `readableBeforeTimeout = true` could leak data. This flag must be carefully audited during key creation.
+- **Disclosure by identity faking**  
+  Since `readKey` is a view function, one can impersonat a custodian.
 
 ## 🔐 Defense-in-Depth
 

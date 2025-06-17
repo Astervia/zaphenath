@@ -94,7 +94,6 @@ Use `setCustodian()` and `removeCustodian()` to manage roles.
 - Each key has a `timeout` (in seconds) and `lastPing` timestamp.
 - When `block.timestamp - lastPing > timeout`, key data becomes available.
 - `ping()` resets the timer, keeping data private.
-- If `readableBeforeTimeout` is `true`, the **owner** can read it anytime.
 
 ## 📜 License
 
