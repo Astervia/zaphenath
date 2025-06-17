@@ -84,9 +84,9 @@ contract Zaphenath {
         emit Pinged(keyId, block.timestamp);
     }
 
+    // Not marked as view: requires transaction for msg.sender verification
     function readKey(bytes32 keyId, address owner)
         external
-        view
         keyExists(keyId, owner)
         onlyRoleOrAbove(keyId, owner, Role.Reader)
         returns (bytes memory)
