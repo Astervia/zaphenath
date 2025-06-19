@@ -9,7 +9,7 @@ Each key in Zaphenath is:
 - Owned by a specific address
 - Identified by a `bytes32 keyId`
 - Associated with encrypted `data`
-- Configured with a `timeout` and a `readableBeforeTimeout` flag
+- Configured with a `timeout`
 
 Data becomes readable after the timeout has passed unless `ping()` is called.
 
@@ -49,7 +49,12 @@ Allows access based on:
 
 - Role of the caller
 - Whether timeout has expired
-- If data is readable before timeout
+
+> [!WARNING] > `readKey` is a `view` function. That means users can declare
+> identity by providing _addresses_ instead of _signing transactions_.
+> After your timeout expires, any user that knows a `Reader`
+> address can access your content. You should use on-chain and
+> off-chain strategies to guarantee your privacy.
 
 #### `ping(...)`
 

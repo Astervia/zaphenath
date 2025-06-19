@@ -7,25 +7,29 @@ This guide outlines the full lifecycle of a key in the Zaphenath system—from c
 Keys are created using `createKey()` by the owner.
 
 ```solidity
-zaph.createKey(keyId, data, timeout, readableBeforeTimeout);
+zaph.createKey(keyId, data, timeout);
 ```
 
 - `keyId`: A unique identifier per owner (hashed internally)
 - `data`: Encrypted or confidential content
 - `timeout`: Seconds until public access if no ping
-- `readableBeforeTimeout`: If true, owner can read anytime
 
 ## 👁 2. Key Access
 
 Reading a key requires:
 
 - Caller to be `Reader`, `Writer`, or `Owner`
-- Timeout to have passed, unless:
-  - Caller is the owner **and** `readableBeforeTimeout` is true
+- Timeout to have passed
 
 ```solidity
 zaph.readKey(keyId, owner);
 ```
+
+> [!WARNING] > `readKey` is a `view` function. That means users can declare
+> identity by providing _addresses_ instead of _signing transactions_.
+> After your timeout expires, any user that knows a `Reader`
+> address can access your content. You should use on-chain and
+> off-chain strategies to guarantee your privacy.
 
 ## 🔁 3. Maintaining Privacy (Ping)
 
@@ -51,7 +55,7 @@ zaph.removeCustodian(keyId, owner, user);
 Users with `Writer` or `Owner` roles can update:
 
 ```solidity
-zaph.updateKey(keyId, owner, newData, newTimeout, newReadableFlag);
+zaph.updateKey(keyId, owner, newData, newTimeout);
 ```
 
 ## 🗑 6. Deleting Keys
