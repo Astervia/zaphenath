@@ -1263,7 +1263,6 @@
     bytes data;
     uint256 lastPing;
     uint256 timeout;
-    bool readableBeforeTimeout;
     mapping(address =&gt; Custodian) custodians;
     bool exists;
 }
@@ -1302,11 +1301,6 @@
 <td>Number of seconds before data becomes accessible</td>
 </tr>
 <tr>
-<td><code>readableBeforeTimeout</code></td>
-<td><code>bool</code></td>
-<td>If true, allows the owner to read data before the timeout</td>
-</tr>
-<tr>
 <td><code>custodians</code></td>
 <td><code>mapping(address =&gt; Custodian)</code></td>
 <td>Role and ping permission map for external users</td>
@@ -1321,7 +1315,6 @@
 <h2 id="design-considerations">🧠 Design Considerations</h2>
 <ul>
 <li>Uses nested mappings to support per-user access control.</li>
-<li><code>readableBeforeTimeout</code> is enforced only for the <strong>owner</strong>.</li>
 <li><code>exists</code> avoids accidental reads on uninitialized keys.</li>
 </ul>
 <h2 id="testing-tips">🧪 Testing Tips</h2>

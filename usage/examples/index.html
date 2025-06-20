@@ -679,15 +679,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#owner-reads-before-timeout" class="md-nav__link">
-    <span class="md-ellipsis">
-      👁 Owner Reads Before Timeout
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#reader-cant-read-before-timeout" class="md-nav__link">
     <span class="md-ellipsis">
       🔒 Reader Can't Read Before Timeout
@@ -1231,15 +1222,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#owner-reads-before-timeout" class="md-nav__link">
-    <span class="md-ellipsis">
-      👁 Owner Reads Before Timeout
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#reader-cant-read-before-timeout" class="md-nav__link">
     <span class="md-ellipsis">
       🔒 Reader Can't Read Before Timeout
@@ -1300,15 +1282,9 @@ zaph.createKey(&quot;0xabc123&quot;, bytes(&quot;Top Secret&quot;), 3 days, true
 </code></pre>
 <p>Rachel creates a key that will become public in 3 days unless she pings.</p>
 <hr />
-<h2 id="owner-reads-before-timeout">👁 Owner Reads Before Timeout</h2>
-<pre><code class="language-solidity">vm.prank(rachel);
-bytes memory data = zaph.readKey(&quot;0xabc123&quot;, rachel);
-</code></pre>
-<p>Since <code>readableBeforeTimeout = true</code>, Rachel can read it before timeout.</p>
-<hr />
 <h2 id="reader-cant-read-before-timeout">🔒 Reader Can't Read Before Timeout</h2>
 <pre><code class="language-solidity">vm.prank(rachel);
-zaph.setCustodian(&quot;0xabc123&quot;, rachel, jacob, Role.Reader, false);
+zaph.setCustodian(&quot;0xabc123&quot;, rachel, jacob, Role.Reader);
 
 vm.prank(jacob);
 vm.expectRevert(&quot;Insufficient role&quot;);

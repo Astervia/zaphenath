@@ -1313,23 +1313,28 @@
 <p>This guide outlines the full lifecycle of a key in the Zaphenath system—from creation to deletion, including access control and timeout transitions.</p>
 <h2 id="1-key-creation">🪪 1. Key Creation</h2>
 <p>Keys are created using <code>createKey()</code> by the owner.</p>
-<pre><code class="language-solidity">zaph.createKey(keyId, data, timeout, readableBeforeTimeout);
+<pre><code class="language-solidity">zaph.createKey(keyId, data, timeout);
 </code></pre>
 <ul>
 <li><code>keyId</code>: A unique identifier per owner (hashed internally)</li>
 <li><code>data</code>: Encrypted or confidential content</li>
 <li><code>timeout</code>: Seconds until public access if no ping</li>
-<li><code>readableBeforeTimeout</code>: If true, owner can read anytime</li>
 </ul>
 <h2 id="2-key-access">👁 2. Key Access</h2>
 <p>Reading a key requires:</p>
 <ul>
 <li>Caller to be <code>Reader</code>, <code>Writer</code>, or <code>Owner</code></li>
-<li>Timeout to have passed, unless:</li>
-<li>Caller is the owner <strong>and</strong> <code>readableBeforeTimeout</code> is true</li>
+<li>Timeout to have passed</li>
 </ul>
 <pre><code class="language-solidity">zaph.readKey(keyId, owner);
 </code></pre>
+<blockquote>
+<p>[!WARNING] &gt; <code>readKey</code> is a <code>view</code> function. That means users can declare
+identity by providing <em>addresses</em> instead of <em>signing transactions</em>.
+After your timeout expires, any user that knows a <code>Reader</code>
+address can access your content. You should use on-chain and
+off-chain strategies to guarantee your privacy.</p>
+</blockquote>
 <h2 id="3-maintaining-privacy-ping">🔁 3. Maintaining Privacy (Ping)</h2>
 <p>The owner or a custodian (if allowed) must call <code>ping()</code> periodically to reset the <code>lastPing</code> timestamp:</p>
 <pre><code class="language-solidity">zaph.ping(keyId, owner);
@@ -1342,7 +1347,7 @@ zaph.removeCustodian(keyId, owner, user);
 </code></pre>
 <h2 id="5-updating-keys">✏️ 5. Updating Keys</h2>
 <p>Users with <code>Writer</code> or <code>Owner</code> roles can update:</p>
-<pre><code class="language-solidity">zaph.updateKey(keyId, owner, newData, newTimeout, newReadableFlag);
+<pre><code class="language-solidity">zaph.updateKey(keyId, owner, newData, newTimeout);
 </code></pre>
 <h2 id="6-deleting-keys">🗑 6. Deleting Keys</h2>
 <p>Writers and Owners can delete the key permanently:</p>

@@ -1467,7 +1467,7 @@
 <li>Owned by a specific address</li>
 <li>Identified by a <code>bytes32 keyId</code></li>
 <li>Associated with encrypted <code>data</code></li>
-<li>Configured with a <code>timeout</code> and a <code>readableBeforeTimeout</code> flag</li>
+<li>Configured with a <code>timeout</code></li>
 </ul>
 <p>Data becomes readable after the timeout has passed unless <code>ping()</code> is called.</p>
 <h2 id="key-components">🔐 Key Components</h2>
@@ -1497,8 +1497,14 @@
 <ul>
 <li>Role of the caller</li>
 <li>Whether timeout has expired</li>
-<li>If data is readable before timeout</li>
 </ul>
+<blockquote>
+<p>[!WARNING] &gt; <code>readKey</code> is a <code>view</code> function. That means users can declare
+identity by providing <em>addresses</em> instead of <em>signing transactions</em>.
+After your timeout expires, any user that knows a <code>Reader</code>
+address can access your content. You should use on-chain and
+off-chain strategies to guarantee your privacy.</p>
+</blockquote>
 <h4 id="ping"><code>ping(...)</code></h4>
 <p>Refreshes the last activity timestamp. Prevents timeout from triggering.</p>
 <h4 id="updatekey"><code>updateKey(...)</code></h4>

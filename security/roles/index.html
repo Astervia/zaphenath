@@ -1427,7 +1427,7 @@
 <p>Where a <code>Custodian</code> struct contains both <code>role</code> and <code>canPing</code>.</p>
 <h2 id="attack-vector-improper-role-assignment">🧨 Attack Vector: Improper Role Assignment</h2>
 <h3 id="scenario">Scenario</h3>
-<p>An owner mistakenly sets a <code>Reader</code> as a <code>Writer</code>, or enables <code>readableBeforeTimeout</code> and sets a role too high.</p>
+<p>An owner mistakenly sets a <code>Reader</code> as a <code>Writer</code>.</p>
 <h3 id="impact">Impact</h3>
 <ul>
 <li>Custodian gains ability to <strong>delete</strong> or <strong>overwrite</strong> key data.</li>

@@ -1258,6 +1258,13 @@
 <h1 id="security-overview">🔐 Security Overview</h1>
 <p>Zaphenath is designed with high-stakes scenarios in mind—contexts where data should only become accessible if specific liveness signals (pings) are absent for a defined duration. This design makes the security surface both critical and nuanced.</p>
 <p>This section of the documentation addresses potential threats, design trade-offs, and safe deployment practices for maintaining trust in Zaphenath's conditional access guarantees.</p>
+<blockquote>
+<p>[!WARNING] &gt; <code>readKey</code> is a <code>view</code> function. That means users can declare
+identity by providing <em>addresses</em> instead of <em>signing transactions</em>.
+After your timeout expires, any user that knows a <code>Reader</code>
+address can access your content. You should use on-chain and
+off-chain strategies to guarantee your privacy.</p>
+</blockquote>
 <h2 id="threat-model">🧭 Threat Model</h2>
 <p>Zaphenath assumes a semi-trusted environment with the following properties:</p>
 <ul>
@@ -1281,8 +1288,8 @@
   Storage expansion, frequent pings, or malicious keys could exhaust gas. The design minimizes state complexity and avoids loops over dynamic mappings.</p>
 </li>
 <li>
-<p><strong>Early Disclosure via Misconfiguration</strong><br />
-  A careless setting of <code>readableBeforeTimeout = true</code> could leak data. This flag must be carefully audited during key creation.</p>
+<p><strong>Disclosure by identity faking</strong><br />
+  Since <code>readKey</code> is a view function, one can impersonat a custodian.</p>
 </li>
 </ul>
 <h2 id="defense-in-depth">🔐 Defense-in-Depth</h2>
@@ -1307,10 +1314,6 @@
 <td>Explicit mapping per key, revocable</td>
 </tr>
 <tr>
-<td>Readability</td>
-<td>Boolean gate before timeout, enforced only for owner</td>
-</tr>
-<tr>
 <td>Ping</td>
 <td>Timestamp validation + delegation control</td>
 </tr>
@@ -1320,7 +1323,6 @@
 <p>Smart contracts cannot protect users from all misconfigurations. Developers integrating Zaphenath should:</p>
 <ul>
 <li>Validate all timeout durations are non-trivial (e.g., ≥ 1 day)</li>
-<li>Default to <code>readableBeforeTimeout = false</code> unless explicitly required</li>
 <li>Monitor on-chain events to track misuse or outdated configurations</li>
 <li>Write access policies and ping routines that are externally observable</li>
 </ul>

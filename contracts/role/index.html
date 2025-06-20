@@ -1299,6 +1299,13 @@
 </tbody>
 </table>
 <p>Roles are evaluated using ordinal values, so <code>Role.Writer</code> is considered higher than <code>Role.Reader</code>, and so on.</p>
+<blockquote>
+<p>[!WARNING] &gt; <code>readKey</code> is a <code>view</code> function, so one can simulate a <code>Reader</code> address and effectively read the data on key after timeout if
+any address with role that is not <code>None</code> is known. You should use off-chain and on-chain mechanisms to guarantee your privacy.
+Your data becomes available in the contract after the timeout to anyone that declares to be a reader
+(i. e. declares the address of a reader), so to speak. Roughly speaking, you can trust the conditional
+disclosure of your data to this contract, but you cannot trust the privacy of the content to it.</p>
+</blockquote>
 <h2 id="usage-in-access-control">🛡 Usage in Access Control</h2>
 <p>Access to sensitive operations is gated using the <code>onlyRoleOrAbove</code> modifier:</p>
 <pre><code class="language-solidity">modifier onlyRoleOrAbove(bytes32 keyId, address owner, Role minimumRole) {
