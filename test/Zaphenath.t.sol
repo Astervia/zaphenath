@@ -152,12 +152,7 @@ contract ZaphenathTest is Test {
         );
         bytes32 hiddenKeyId = keccak256("mysterion");
         vm.prank(rachel);
-        zaph.createKey(
-            hiddenKeyId,
-            bytes("Secret Before Timeout"),
-            1 days,
-            false
-        );
+        zaph.createKey(hiddenKeyId, bytes("Secret Before Timeout"), 1 days);
 
         console.log("Rachel tries to read it before timeout...");
         vm.prank(rachel);
