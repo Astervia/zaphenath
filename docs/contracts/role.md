@@ -26,6 +26,12 @@ Each role is associated with an increasing level of access:
 
 Roles are evaluated using ordinal values, so `Role.Writer` is considered higher than `Role.Reader`, and so on.
 
+> [!WARNING] > `readKey` is a `view` function, so one can simulate a `Reader` address and effectively read the data on key after timeout if
+> any address with role that is not `None` is known. You should use off-chain and on-chain mechanisms to guarantee your privacy.
+> Your data becomes available in the contract after the timeout to anyone that declares to be a reader
+> (i. e. declares the address of a reader), so to speak. Roughly speaking, you can trust the conditional
+> disclosure of your data to this contract, but you cannot trust the privacy of the content to it.
+
 ## 🛡 Usage in Access Control
 
 Access to sensitive operations is gated using the `onlyRoleOrAbove` modifier:

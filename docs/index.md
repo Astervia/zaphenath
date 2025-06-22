@@ -11,7 +11,6 @@ Zaphenath allows users to:
 - Create encrypted data entries ("keys") that only they can access
 - Configure access policies based on inactivity timeouts
 - Delegate access and responsibilities to trusted custodians
-- Toggle whether the data is readable before the timeout or only after
 
 It uses Solidity, is designed for Ethereum-compatible networks, and is built using the Foundry development stack.
 

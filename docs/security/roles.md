@@ -23,7 +23,7 @@ Where a `Custodian` struct contains both `role` and `canPing`.
 
 ### Scenario
 
-An owner mistakenly sets a `Reader` as a `Writer`, or enables `readableBeforeTimeout` and sets a role too high.
+An owner mistakenly sets a `Reader` as a `Writer`.
 
 ### Impact
 

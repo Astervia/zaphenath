@@ -17,11 +17,6 @@
         "name": "timeout",
         "type": "uint256",
         "internalType": "uint256"
-      },
-      {
-        "name": "readableBeforeTimeout",
-        "type": "bool",
-        "internalType": "bool"
       }
     ],
     "outputs": [],
@@ -109,7 +104,7 @@
         "internalType": "bytes"
       }
     ],
-    "stateMutability": "nonpayable"
+    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -190,11 +185,6 @@
         "name": "newTimeout",
         "type": "uint256",
         "internalType": "uint256"
-      },
-      {
-        "name": "newReadableBeforeTimeout",
-        "type": "bool",
-        "internalType": "bool"
       }
     ],
     "outputs": [],

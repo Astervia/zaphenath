@@ -12,7 +12,7 @@ Validators or miners may slightly adjust `block.timestamp` within a protocol-def
 While these shifts are small, their **impact scales** with:
 
 - Short timeout configurations (e.g., under 1 hour)
-- Misconfigured `readableBeforeTimeout` access rules
+- Loose custodian setups
 
 ## 🔒 Mitigations in Zaphenath
 

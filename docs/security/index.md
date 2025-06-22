@@ -4,6 +4,12 @@ Zaphenath is designed with high-stakes scenarios in mind—contexts where data s
 
 This section of the documentation addresses potential threats, design trade-offs, and safe deployment practices for maintaining trust in Zaphenath's conditional access guarantees.
 
+> [!WARNING] > `readKey` is a `view` function. That means users can declare
+> identity by providing _addresses_ instead of _signing transactions_.
+> After your timeout expires, any user that knows a `Reader`
+> address can access your content. You should use on-chain and
+> off-chain strategies to guarantee your privacy.
+
 ## 🧭 Threat Model
 
 Zaphenath assumes a semi-trusted environment with the following properties:
@@ -25,25 +31,23 @@ The protocol does _not_ rely on external oracles, off-chain cron jobs, or schedu
 - **Gas-Based Denial of Service (DoS)**  
   Storage expansion, frequent pings, or malicious keys could exhaust gas. The design minimizes state complexity and avoids loops over dynamic mappings.
 
-- **Early Disclosure via Misconfiguration**  
-  A careless setting of `readableBeforeTimeout = true` could leak data. This flag must be carefully audited during key creation.
+- **Disclosure by identity faking**  
+  Since `readKey` is a view function, one can impersonat a custodian.
 
 ## 🔐 Defense-in-Depth
 
-| Layer       | Mitigation Strategy                                  |
-| ----------- | ---------------------------------------------------- |
-| Time        | Enforced minimum timeout, L1 time assumptions        |
-| Roles       | Enum-based access, hard-coded privilege checks       |
-| Custodians  | Explicit mapping per key, revocable                  |
-| Readability | Boolean gate before timeout, enforced only for owner |
-| Ping        | Timestamp validation + delegation control            |
+| Layer      | Mitigation Strategy                            |
+| ---------- | ---------------------------------------------- |
+| Time       | Enforced minimum timeout, L1 time assumptions  |
+| Roles      | Enum-based access, hard-coded privilege checks |
+| Custodians | Explicit mapping per key, revocable            |
+| Ping       | Timestamp validation + delegation control      |
 
 ## 🚧 Developer Responsibilities
 
 Smart contracts cannot protect users from all misconfigurations. Developers integrating Zaphenath should:
 
 - Validate all timeout durations are non-trivial (e.g., ≥ 1 day)
-- Default to `readableBeforeTimeout = false` unless explicitly required
 - Monitor on-chain events to track misuse or outdated configurations
 - Write access policies and ping routines that are externally observable
 

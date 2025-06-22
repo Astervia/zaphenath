@@ -8,7 +8,6 @@ struct KeyData {
     bytes data;
     uint256 lastPing;
     uint256 timeout;
-    bool readableBeforeTimeout;
     mapping(address => Custodian) custodians;
     bool exists;
 }

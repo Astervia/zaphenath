@@ -5,6 +5,10 @@ All notable changes to **Zaphenath** will be documented in this file following
 
 ---
 
+## v0.1.1 - 2025-06-18
+
+- `readableBeforeTimeout` removed due to the nature of view functions in Solidity
+
 ## [v0.1.0] – 2025‑06‑01
 
 ### Added

@@ -18,7 +18,7 @@ contract ZaphenathTest is Test {
 
         console.log("Creating key for Rachel...");
         vm.prank(rachel);
-        zaph.createKey(keyId, bytes(unicode"Χριστός Ανέστη"), 1 days, true);
+        zaph.createKey(keyId, bytes(unicode"Χριστός Ανέστη"), 1 days);
 
         console.log("Key created!");
     }
@@ -28,21 +28,20 @@ contract ZaphenathTest is Test {
 
         console.log("Creating a new key for Jacob...");
         vm.prank(jacob);
-        zaph.createKey(anotherKey, bytes(unicode"Αληθώς Ανέστη"), 1 days, true);
+        zaph.createKey(anotherKey, bytes(unicode"Αληθώς Ανέστη"), 1 days);
 
-        console.log("Reading Jacob's key...");
+        console.log("Checking if Jacob's key is readable");
         vm.prank(jacob);
-        bytes memory data = zaph.readKey(anotherKey, jacob);
-        console.log("Data read:", string(data));
-        assertEq(data, bytes(unicode"Αληθώς Ανέστη"));
+        vm.expectRevert("Data not available before timeout");
+        zaph.readKey(anotherKey, jacob);
+        console.log("Jacob's key is not readable!");
     }
 
     function testReadKeyBeforeTimeout() public {
         console.log("Rachel trying to read her own key...");
         vm.prank(rachel);
-        bytes memory data = zaph.readKey(keyId, rachel);
-        console.log("Read data:", string(data));
-        assertEq(data, bytes(unicode"Χριστός Ανέστη"));
+        vm.expectRevert("Data not available before timeout");
+        zaph.readKey(keyId, rachel);
     }
 
     function testReadKeyFailsIfNotOwner() public {
@@ -62,9 +61,9 @@ contract ZaphenathTest is Test {
 
         console.log("Reading data after ping...");
         vm.prank(rachel);
-        bytes memory data = zaph.readKey(keyId, rachel);
-        console.log("Data read:", string(data));
-        assertEq(data, bytes(unicode"Χριστός Ανέστη"));
+        vm.expectRevert("Data not available before timeout");
+        zaph.readKey(keyId, rachel);
+        console.log("Key not readable due to successful ping!");
     }
 
     function testSetAndReadCustodian() public {
@@ -83,7 +82,9 @@ contract ZaphenathTest is Test {
     }
 
     function testCustodianCannotPingIfNotAllowed() public {
-        console.log("Rachel assigning Jacob as Writer with no ping permission...");
+        console.log(
+            "Rachel assigning Jacob as Writer with no ping permission..."
+        );
         vm.prank(rachel);
         zaph.setCustodian(keyId, rachel, jacob, Role.Writer, false);
 
@@ -98,11 +99,27 @@ contract ZaphenathTest is Test {
         vm.prank(rachel);
         zaph.setCustodian(keyId, rachel, jacob, Role.Writer, true);
 
+        // Advance on time to read the data
+        vm.warp(block.timestamp + 3 days);
+        // Read the data to guarantee it is readable
+        vm.prank(rachel);
+        bytes memory data = zaph.readKey(keyId, rachel);
+        assertEq(data, bytes(unicode"Χριστός Ανέστη"));
+        console.log("Key successfully read after timeout");
+
         console.log("Jacob pings the key...");
         vm.prank(jacob);
         zaph.ping(keyId, rachel);
 
         console.log("Ping successful");
+
+        console.log("Trying to read key again");
+
+        vm.prank(rachel);
+        vm.expectRevert("Data not available before timeout");
+        zaph.readKey(keyId, rachel);
+
+        console.log("Read not available after ping");
     }
 
     function testDeleteKey() public {
@@ -118,7 +135,9 @@ contract ZaphenathTest is Test {
     function testUpdateKey() public {
         console.log("Rachel updates key data and timeout...");
         vm.prank(rachel);
-        zaph.updateKey(keyId, rachel, bytes("Soli Deo Gloria"), 2 days, true);
+        zaph.updateKey(keyId, rachel, bytes("Soli Deo Gloria"), 2 days);
+
+        vm.warp(block.timestamp + 3 days);
 
         console.log("Reading updated key...");
         vm.prank(rachel);
@@ -128,10 +147,12 @@ contract ZaphenathTest is Test {
     }
 
     function testKeyNotReadableBeforeTimeoutIfNotAllowed() public {
-        console.log("Creating a key for Rachel that is NOT readable before timeout...");
+        console.log(
+            "Creating a key for Rachel that is NOT readable before timeout..."
+        );
         bytes32 hiddenKeyId = keccak256("mysterion");
         vm.prank(rachel);
-        zaph.createKey(hiddenKeyId, bytes("Secret Before Timeout"), 1 days, false);
+        zaph.createKey(hiddenKeyId, bytes("Secret Before Timeout"), 1 days);
 
         console.log("Rachel tries to read it before timeout...");
         vm.prank(rachel);

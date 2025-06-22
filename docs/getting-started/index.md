@@ -27,10 +27,6 @@ Zaphenath defines strict roles:
 
 Users can assign custodians with specific roles and the ability to send pings on their behalf. This enables secure delegation of responsibilities.
 
-### 5. Privacy Toggle
-
-Data can optionally be made visible to the owner before the timeout expires using a `readableBeforeTimeout` setting.
-
 ## What You'll Learn
 
 - How to deploy and test the Zaphenath contract

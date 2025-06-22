@@ -15,22 +15,11 @@ Rachel creates a key that will become public in 3 days unless she pings.
 
 ---
 
-## 👁 Owner Reads Before Timeout
-
-```solidity
-vm.prank(rachel);
-bytes memory data = zaph.readKey("0xabc123", rachel);
-```
-
-Since `readableBeforeTimeout = true`, Rachel can read it before timeout.
-
----
-
 ## 🔒 Reader Can't Read Before Timeout
 
 ```solidity
 vm.prank(rachel);
-zaph.setCustodian("0xabc123", rachel, jacob, Role.Reader, false);
+zaph.setCustodian("0xabc123", rachel, jacob, Role.Reader);
 
 vm.prank(jacob);
 vm.expectRevert("Insufficient role");

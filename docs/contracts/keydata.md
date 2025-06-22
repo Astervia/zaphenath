@@ -10,7 +10,6 @@ struct KeyData {
     bytes data;
     uint256 lastPing;
     uint256 timeout;
-    bool readableBeforeTimeout;
     mapping(address => Custodian) custodians;
     bool exists;
 }
@@ -20,20 +19,18 @@ struct KeyData {
 
 ## 🔐 Fields
 
-| Field                   | Type                            | Description                                               |
-| ----------------------- | ------------------------------- | --------------------------------------------------------- |
-| `owner`                 | `address`                       | Owner of the key                                          |
-| `data`                  | `bytes`                         | Encrypted or opaque data payload                          |
-| `lastPing`              | `uint256`                       | Timestamp of last `ping()`                                |
-| `timeout`               | `uint256`                       | Number of seconds before data becomes accessible          |
-| `readableBeforeTimeout` | `bool`                          | If true, allows the owner to read data before the timeout |
-| `custodians`            | `mapping(address => Custodian)` | Role and ping permission map for external users           |
-| `exists`                | `bool`                          | Tracks if the key is initialized                          |
+| Field        | Type                            | Description                                      |
+| ------------ | ------------------------------- | ------------------------------------------------ |
+| `owner`      | `address`                       | Owner of the key                                 |
+| `data`       | `bytes`                         | Encrypted or opaque data payload                 |
+| `lastPing`   | `uint256`                       | Timestamp of last `ping()`                       |
+| `timeout`    | `uint256`                       | Number of seconds before data becomes accessible |
+| `custodians` | `mapping(address => Custodian)` | Role and ping permission map for external users  |
+| `exists`     | `bool`                          | Tracks if the key is initialized                 |
 
 ## 🧠 Design Considerations
 
 - Uses nested mappings to support per-user access control.
-- `readableBeforeTimeout` is enforced only for the **owner**.
 - `exists` avoids accidental reads on uninitialized keys.
 
 ## 🧪 Testing Tips

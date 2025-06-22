@@ -7,7 +7,6 @@
 ## 🛠 Features
 
 - Create, read, update, and delete encrypted key data.
-- Privacy-aware access rules (readable before timeout or only after).
 - Automatic data exposure after owner inactivity (ping-based).
 - Fine-grained role control: `Owner`, `Writer`, `Reader`, `None`.
 - Custodian system supports delegated read/write/ping permissions.
@@ -89,12 +88,15 @@ You'll see detailed logs thanks to `console.log` statements.
 
 Use `setCustodian()` and `removeCustodian()` to manage roles.
 
+> About reading keys: Roles are just formalities when reading keys.
+> Since `readKey` is a `view` function, one can use a reader address to declare identity and execute this function (`view` functions don't require signed transactions).
+> So we advise you to combine on-chain and off-chain methods to guarantee your privacy when using smart contracts like this.
+
 ## ⏱ Ping-Based Timeout Logic
 
 - Each key has a `timeout` (in seconds) and `lastPing` timestamp.
 - When `block.timestamp - lastPing > timeout`, key data becomes available.
 - `ping()` resets the timer, keeping data private.
-- If `readableBeforeTimeout` is `true`, the **owner** can read it anytime.
 
 ## 📜 License
 
