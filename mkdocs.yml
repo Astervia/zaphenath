@@ -49,6 +49,7 @@ nav:
           - Overview: getting-started/index.md
           - Installation: getting-started/installation.md
           - Deployment: getting-started/deployment.md
+          - Usage Example: getting-started/usage-example.md
     - Contracts:
           - Zaphenath: contracts/zaphenath.md
           - Role: contracts/role.md
