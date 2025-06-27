@@ -1513,17 +1513,8 @@ chmod 600 ~/.zaphenathpkey
 </code></pre>
 <h2 id="4-initialize-the-local-configuration-file">🗂️ 4. Initialize the Local Configuration File</h2>
 <p>Zaphenath CLI uses a local config file to track keys, contract addresses, and network settings.</p>
-<p>First, initialize the config:</p>
+<p>Initialize the config:</p>
 <pre><code class="language-bash">zaph config init
-</code></pre>
-<p>Then, add your test key entry to the config:</p>
-<pre><code class="language-bash">zaph config add \
-  --key-id testkey \
-  --contract-address $CONTRACT_ADDRESS \
-  --private-key-path ~/.zaphenathpkey \
-  --network anvil \
-  --rpc-url http://localhost:8545 \
-  --timeout 10
 </code></pre>
 <p>Optional: view the config content to confirm:</p>
 <pre><code class="language-bash">zaph config view
