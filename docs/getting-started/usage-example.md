@@ -49,9 +49,35 @@ echo "$TEST_PRIVKEY" > ~/.zaphenathpkey
 chmod 600 ~/.zaphenathpkey
 ```
 
-## 🏗️ 4. Create a Key (with small timeout)
+## 🗂️ 4. Initialize the Local Configuration File
 
-Create a test key with a 10-second timeout:
+Zaphenath CLI uses a local config file to track keys, contract addresses, and network settings.
+
+First, initialize the config:
+
+```bash
+zaph config init
+```
+
+Then, add your test key entry to the config:
+
+```bash
+zaph config add \
+  --key-id testkey \
+  --contract-address $CONTRACT_ADDRESS \
+  --private-key-path ~/.zaphenathpkey \
+  --network anvil \
+  --rpc-url http://localhost:8545 \
+  --timeout 10
+```
+
+Optional: view the config content to confirm:
+
+```bash
+zaph config view
+```
+
+## 🏗️ 5. Create a Key On-Chain (with Small Timeout)
 
 ```bash
 zaph contract create-key \
@@ -66,19 +92,19 @@ zaph contract create-key \
   -y
 ```
 
-## 🔒 5. Try Reading Before Timeout (Should Fail)
+## 🔒 6. Try Reading Before Timeout (Should Fail)
 
 ```bash
 zaph contract read-key \
   --key-id testkey
 ```
 
-Expect an error with the message:
+Expect an error:
 `Data not available before timeout`
 
-## ⏳ 6. Wait & Read After Timeout (Should Succeed)
+## ⏳ 7. Wait & Read After Timeout (Should Succeed)
 
-Wait 10 seconds and read:
+Wait 10 seconds:
 
 ```bash
 sleep 10
@@ -86,10 +112,10 @@ zaph contract read-key \
   --key-id testkey
 ```
 
-Expected:
+Expected output:
 `0xdeadbeefcafebabe`
 
-## 🌀 7. Start the Daemon
+## 🌀 8. Start the Daemon
 
 ```bash
 zaph daemon run \
@@ -98,27 +124,25 @@ zaph daemon run \
   -y
 ```
 
-The daemon pings keys periodically to keep them private.
+The daemon will keep the key "alive" by pinging it regularly.
 
-## 🚫 8. Try Reading Again (Should Fail)
+## 🚫 9. Try Reading Again (Should Fail)
 
 ```bash
 zaph contract read-key \
   --key-id testkey
 ```
 
-Still fails:
+Expected:
 `Data not available before timeout`
 
-The daemon reset the inactivity timer.
+## 🧯 10. Stop the Daemon
 
-## 🧯 9. Stop the Daemon
+Use `Ctrl+C` to stop the daemon.
 
-Stop it with `Ctrl+C`.
+## ✅ 11. Wait & Read Again (Should Succeed)
 
-## ✅ 10. Wait & Read Again (Should Succeed)
-
-Wait another 10 seconds and read again:
+Wait another 10 seconds:
 
 ```bash
 sleep 10
@@ -136,10 +160,11 @@ Expected:
 | 1    | Start Anvil              | Local testnet ready                |
 | 2    | Deploy contract          | Contract deployed                  |
 | 3    | Export key               | Used for TX signing                |
-| 4    | Create key               | Key registered on-chain            |
-| 5    | Read immediately         | ❌ Fails — still within timeout    |
-| 6    | Read after timeout       | ✅ Success                         |
-| 7    | Start daemon             | Key is pinged                      |
-| 8    | Read while daemon active | ❌ Fails — timeout keeps resetting |
-| 9    | Stop daemon              | Timer begins again                 |
-| 10   | Read after inactivity    | ✅ Success                         |
+| 4    | Initialize config        | Config file and key registered     |
+| 5    | Create key on-chain      | Key created with timeout           |
+| 6    | Read immediately         | ❌ Fails — still within timeout    |
+| 7    | Read after timeout       | ✅ Success                         |
+| 8    | Start daemon             | Key is pinged                      |
+| 9    | Read while daemon active | ❌ Fails — timeout keeps resetting |
+| 10   | Stop daemon              | Timer begins again                 |
+| 11   | Read after inactivity    | ✅ Success                         |
