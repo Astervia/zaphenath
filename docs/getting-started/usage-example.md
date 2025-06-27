@@ -53,22 +53,10 @@ chmod 600 ~/.zaphenathpkey
 
 Zaphenath CLI uses a local config file to track keys, contract addresses, and network settings.
 
-First, initialize the config:
+Initialize the config:
 
 ```bash
 zaph config init
-```
-
-Then, add your test key entry to the config:
-
-```bash
-zaph config add \
-  --key-id testkey \
-  --contract-address $CONTRACT_ADDRESS \
-  --private-key-path ~/.zaphenathpkey \
-  --network anvil \
-  --rpc-url http://localhost:8545 \
-  --timeout 10
 ```
 
 Optional: view the config content to confirm:
