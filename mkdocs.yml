@@ -44,6 +44,7 @@ nav:
     - Home: index.md
     - White Paper: whitepaper.md
     - Business White Paper: business-whitepaper.md
+    - Clients Overview: clients.md
     - Getting Started:
           - Overview: getting-started/index.md
           - Installation: getting-started/installation.md
