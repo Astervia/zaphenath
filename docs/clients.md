@@ -44,11 +44,12 @@ Example:
 ```bash
 zaph contract create-key \
   --key-id my-will \
-  --data 0x... \
+  --data deadbeef \
   --timeout 3600 \
-  --readable-before-timeout \
   --contract-address 0x... \
-  --private-key-path ~/.zaph/id.key
+  --gas-buffer 1.2 \
+  --private-key-path ~/.zaph/id.key \
+  -y
 ```
 
 ### 🧪 Daemon Mode
