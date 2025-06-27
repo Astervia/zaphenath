@@ -1431,11 +1431,12 @@ cargo install --path .
 <p>Example:</p>
 <pre><code class="language-bash">zaph contract create-key \
   --key-id my-will \
-  --data 0x... \
+  --data deadbeef \
   --timeout 3600 \
-  --readable-before-timeout \
   --contract-address 0x... \
-  --private-key-path ~/.zaph/id.key
+  --gas-buffer 1.2 \
+  --private-key-path ~/.zaph/id.key \
+  -y
 </code></pre>
 <h3 id="daemon-mode">🧪 Daemon Mode</h3>
 <p>The CLI also supports a background daemon:</p>
