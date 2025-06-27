@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://zaphenath.astervia.tech/contracts/zaphenath/">
+        <link rel="canonical" href="https://zaphenath.astervia.tech/getting-started/usage-example/">
       
       
-        <link rel="prev" href="../../getting-started/usage-example/">
+        <link rel="prev" href="../deployment/">
       
       
-        <link rel="next" href="../role/">
+        <link rel="next" href="../../contracts/zaphenath/">
       
       
       <link rel="icon" href="../../assets/images/favicon-blue.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Zaphenath - Zaphenath</title>
+        <title>Usage Example - Zaphenath</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#zaphenath-contract" class="md-skip">
+        <a href="#usage-example-local-test-with-anvil" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Zaphenath
+              Usage Example
             
           </span>
         </div>
@@ -315,18 +315,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -342,7 +344,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -356,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -379,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -402,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/deployment/" class="md-nav__link">
+      <a href="../deployment/" class="md-nav__link">
         
   
   
@@ -417,76 +419,6 @@
   
 
               
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/usage-example/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Usage Example
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Contracts
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Contracts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -509,7 +441,7 @@
   
   
   <span class="md-ellipsis">
-    Zaphenath
+    Usage Example
     
   </span>
   
@@ -522,7 +454,7 @@
   
   
   <span class="md-ellipsis">
-    Zaphenath
+    Usage Example
     
   </span>
   
@@ -545,138 +477,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#1-start-anvil" class="md-nav__link">
     <span class="md-ellipsis">
-      📘 Overview
+      ⚙️ 1. Start Anvil
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
+  <a href="#2-deploy-the-zaphenath-smart-contract" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 Key Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔐 Key Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#state" class="md-nav__link">
-    <span class="md-ellipsis">
-      State
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    <span class="md-ellipsis">
-      Events
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modifiers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modifiers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#core-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Functions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#createkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      createKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#readkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      readKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ping" class="md-nav__link">
-    <span class="md-ellipsis">
-      ping(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updatekey" class="md-nav__link">
-    <span class="md-ellipsis">
-      updateKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deletekey" class="md-nav__link">
-    <span class="md-ellipsis">
-      deleteKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setcustodian-removecustodian" class="md-nav__link">
-    <span class="md-ellipsis">
-      setCustodian(...) / removeCustodian(...)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Design Considerations
+      📦 2. Deploy the Zaphenath Smart Contract
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-tests" class="md-nav__link">
+  <a href="#3-save-the-private-key-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Recommended Tests
+      🔑 3. Save the Private Key (Optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-create-a-key-with-small-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ 4. Create a Key (with small timeout)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-try-reading-before-timeout-should-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 5. Try Reading Before Timeout (Should Fail)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wait-read-after-timeout-should-succeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏳ 6. Wait &amp; Read After Timeout (Should Succeed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-start-the-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌀 7. Start the Daemon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-try-reading-again-should-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 8. Try Reading Again (Should Fail)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-stop-the-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧯 9. Stop the Daemon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-wait-read-again-should-succeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 10. Wait &amp; Read Again (Should Succeed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Summary
     </span>
   </a>
   
@@ -691,6 +584,51 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Contracts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Contracts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -698,7 +636,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../role/" class="md-nav__link">
+      <a href="../../contracts/zaphenath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zaphenath
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contracts/role/" class="md-nav__link">
         
   
   
@@ -721,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custodian/" class="md-nav__link">
+      <a href="../../contracts/custodian/" class="md-nav__link">
         
   
   
@@ -744,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../keydata/" class="md-nav__link">
+      <a href="../../contracts/keydata/" class="md-nav__link">
         
   
   
@@ -1387,138 +1348,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#1-start-anvil" class="md-nav__link">
     <span class="md-ellipsis">
-      📘 Overview
+      ⚙️ 1. Start Anvil
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
+  <a href="#2-deploy-the-zaphenath-smart-contract" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 Key Components
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔐 Key Components">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#state" class="md-nav__link">
-    <span class="md-ellipsis">
-      State
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    <span class="md-ellipsis">
-      Events
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modifiers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modifiers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#core-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Functions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#createkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      createKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#readkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      readKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ping" class="md-nav__link">
-    <span class="md-ellipsis">
-      ping(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#updatekey" class="md-nav__link">
-    <span class="md-ellipsis">
-      updateKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deletekey" class="md-nav__link">
-    <span class="md-ellipsis">
-      deleteKey(...)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setcustodian-removecustodian" class="md-nav__link">
-    <span class="md-ellipsis">
-      setCustodian(...) / removeCustodian(...)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Design Considerations
+      📦 2. Deploy the Zaphenath Smart Contract
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-tests" class="md-nav__link">
+  <a href="#3-save-the-private-key-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Recommended Tests
+      🔑 3. Save the Private Key (Optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-create-a-key-with-small-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ 4. Create a Key (with small timeout)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-try-reading-before-timeout-should-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 5. Try Reading Before Timeout (Should Fail)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wait-read-after-timeout-should-succeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏳ 6. Wait &amp; Read After Timeout (Should Succeed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-start-the-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌀 7. Start the Daemon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-try-reading-again-should-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 8. Try Reading Again (Should Fail)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-stop-the-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧯 9. Stop the Daemon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-wait-read-again-should-succeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 10. Wait &amp; Read Again (Should Succeed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Summary
     </span>
   </a>
   
@@ -1540,76 +1462,150 @@
 
 
 
-<h1 id="zaphenath-contract">Zaphenath Contract</h1>
-<p>The <code>Zaphenath</code> contract is the core of the system. It enables users to securely store and manage keys with timeout-based privacy and delegated access controls.</p>
-<h2 id="overview">📘 Overview</h2>
-<p>Each key in Zaphenath is:</p>
-<ul>
-<li>Owned by a specific address</li>
-<li>Identified by a <code>bytes32 keyId</code></li>
-<li>Associated with encrypted <code>data</code></li>
-<li>Configured with a <code>timeout</code></li>
-</ul>
-<p>Data becomes readable after the timeout has passed unless <code>ping()</code> is called.</p>
-<h2 id="key-components">🔐 Key Components</h2>
-<h3 id="state">State</h3>
-<pre><code class="language-solidity">mapping(bytes32 =&gt; KeyData) private keys;
+<h1 id="usage-example-local-test-with-anvil">🧪 Usage Example: Local Test with Anvil</h1>
+<p>This guide walks you through a full example of using the Zaphenath CLI client in a local environment powered by <a href="https://book.getfoundry.sh/anvil/">Anvil</a>. You'll create a key, test timeout behavior, and see the daemon in action with the <a href="https://github.com/Astervia/zaphenath-cli-client">CLI Client</a>.</p>
+<h2 id="1-start-anvil">⚙️ 1. Start Anvil</h2>
+<p>Run Anvil with a fixed mnemonic and fast block time:</p>
+<pre><code class="language-bash">anvil --port 8545 \
+    --mnemonic &quot;test test test test test test test test test test test junk&quot; \
+    --block-time 1
 </code></pre>
-<p>Keys are internally identified by <code>keccak256(abi.encodePacked(owner, keyId))</code> to ensure per-owner uniqueness.</p>
-<h3 id="events">Events</h3>
-<ul>
-<li><code>KeyCreated(bytes32 keyId, address owner)</code></li>
-<li><code>KeyDeleted(bytes32 keyId)</code></li>
-<li><code>KeyUpdated(bytes32 keyId)</code></li>
-<li><code>Pinged(bytes32 keyId, uint256 timestamp)</code></li>
-<li><code>CustodianUpdated(bytes32 keyId, address user, Role role, bool canPing)</code></li>
-</ul>
-<h3 id="modifiers">Modifiers</h3>
-<ul>
-<li><code>onlyOwner(keyId, owner)</code></li>
-<li><code>onlyRoleOrAbove(keyId, owner, minimumRole)</code></li>
-<li><code>keyExists(keyId, owner)</code></li>
-</ul>
-<h3 id="core-functions">Core Functions</h3>
-<h4 id="createkey"><code>createKey(...)</code></h4>
-<p>Creates a key with an initial data payload and timeout. Only one key per <code>keyId</code> per owner.</p>
-<h4 id="readkey"><code>readKey(...)</code></h4>
-<p>Allows access based on:</p>
-<ul>
-<li>Role of the caller</li>
-<li>Whether timeout has expired</li>
-</ul>
-<blockquote>
-<p>[!WARNING] &gt; <code>readKey</code> is a <code>view</code> function. That means users can declare
-identity by providing <em>addresses</em> instead of <em>signing transactions</em>.
-After your timeout expires, any user that knows a <code>Reader</code>
-address can access your content. You should use on-chain and
-off-chain strategies to guarantee your privacy.</p>
-</blockquote>
-<h4 id="ping"><code>ping(...)</code></h4>
-<p>Refreshes the last activity timestamp. Prevents timeout from triggering.</p>
-<h4 id="updatekey"><code>updateKey(...)</code></h4>
-<p>Allows Writers and Owners to update key metadata and data.</p>
-<h4 id="deletekey"><code>deleteKey(...)</code></h4>
-<p>Removes the key. Only Writer or Owner can perform this action.</p>
-<h4 id="setcustodian-removecustodian"><code>setCustodian(...)</code> / <code>removeCustodian(...)</code></h4>
-<p>Assign or revoke roles and ping permission to external addresses.</p>
-<h2 id="design-considerations">🧠 Design Considerations</h2>
-<ul>
-<li><code>Custodian</code> mappings are stored within each <code>KeyData</code>, allowing per-key delegation.</li>
-<li>Role escalation is strictly enforced via <code>onlyRoleOrAbove()</code>.</li>
-<li>All key-related operations are scoped per <code>(owner, keyId)</code> pair.</li>
-</ul>
-<h2 id="recommended-tests">🧪 Recommended Tests</h2>
-<ul>
-<li>Owner creates key and reads it</li>
-<li>Reader cannot read before timeout</li>
-<li>Reader reads after timeout</li>
-<li>Ping resets timeout</li>
-<li>Custodians with and without ping permission</li>
-</ul>
-<hr />
-<p>➡️ Learn about <a href="../role/">Role Enum</a></p>
+<h2 id="2-deploy-the-zaphenath-smart-contract">📦 2. Deploy the Zaphenath Smart Contract</h2>
+<p>Export the default Anvil private key (auto-funded):</p>
+<pre><code class="language-bash">export TEST_PRIVKEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+</code></pre>
+<p>Clone the contract repo and deploy it:</p>
+<pre><code class="language-bash">git clone https://github.com/Astervia/zaphenat.git
+cd zaphenat
+
+forge script script/Zaphenath.s.sol \
+  --broadcast \
+  --private-key $TEST_PRIVKEY \
+  --rpc-url http://localhost:8545
+</code></pre>
+<p>Extract the deployed contract address:</p>
+<pre><code class="language-bash">export CONTRACT_ADDRESS=$(jq -r \
+  '.transactions[] | select(.contractName==&quot;Zaphenath&quot;) | .contractAddress' \
+  broadcast/Zaphenath.s.sol/31337/run-latest.json)
+</code></pre>
+<h2 id="3-save-the-private-key-optional">🔑 3. Save the Private Key (Optional)</h2>
+<p>To use with the CLI without re-passing it:</p>
+<pre><code class="language-bash">echo &quot;$TEST_PRIVKEY&quot; &gt; ~/.zaphenathpkey
+chmod 600 ~/.zaphenathpkey
+</code></pre>
+<h2 id="4-create-a-key-with-small-timeout">🏗️ 4. Create a Key (with small timeout)</h2>
+<p>Create a test key with a 10-second timeout:</p>
+<pre><code class="language-bash">zaph contract create-key \
+  --key-id testkey \
+  --data deadbeefcafebabe \
+  --timeout 10 \
+  --gas-buffer 1.2 \
+  --contract-address $CONTRACT_ADDRESS \
+  --private-key-path ~/.zaphenathpkey \
+  --network anvil \
+  --rpc-url http://localhost:8545 \
+  -y
+</code></pre>
+<h2 id="5-try-reading-before-timeout-should-fail">🔒 5. Try Reading Before Timeout (Should Fail)</h2>
+<pre><code class="language-bash">zaph contract read-key \
+  --key-id testkey
+</code></pre>
+<p>Expect an error with the message:
+<code>Data not available before timeout</code></p>
+<h2 id="6-wait-read-after-timeout-should-succeed">⏳ 6. Wait &amp; Read After Timeout (Should Succeed)</h2>
+<p>Wait 10 seconds and read:</p>
+<pre><code class="language-bash">sleep 10
+zaph contract read-key \
+  --key-id testkey
+</code></pre>
+<p>Expected:
+<code>0xdeadbeefcafebabe</code></p>
+<h2 id="7-start-the-daemon">🌀 7. Start the Daemon</h2>
+<pre><code class="language-bash">zaph daemon run \
+  --interval 5 \
+  --gas-buffer 1.2 \
+  -y
+</code></pre>
+<p>The daemon pings keys periodically to keep them private.</p>
+<h2 id="8-try-reading-again-should-fail">🚫 8. Try Reading Again (Should Fail)</h2>
+<pre><code class="language-bash">zaph contract read-key \
+  --key-id testkey
+</code></pre>
+<p>Still fails:
+<code>Data not available before timeout</code></p>
+<p>The daemon reset the inactivity timer.</p>
+<h2 id="9-stop-the-daemon">🧯 9. Stop the Daemon</h2>
+<p>Stop it with <code>Ctrl+C</code>.</p>
+<h2 id="10-wait-read-again-should-succeed">✅ 10. Wait &amp; Read Again (Should Succeed)</h2>
+<p>Wait another 10 seconds and read again:</p>
+<pre><code class="language-bash">sleep 10
+zaph contract read-key \
+  --key-id testkey
+</code></pre>
+<p>Expected:
+<code>0xdeadbeefcafebabe</code></p>
+<h2 id="summary">✅ Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start Anvil</td>
+<td>Local testnet ready</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Deploy contract</td>
+<td>Contract deployed</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Export key</td>
+<td>Used for TX signing</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Create key</td>
+<td>Key registered on-chain</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Read immediately</td>
+<td>❌ Fails — still within timeout</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Read after timeout</td>
+<td>✅ Success</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Start daemon</td>
+<td>Key is pinged</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Read while daemon active</td>
+<td>❌ Fails — timeout keeps resetting</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Stop daemon</td>
+<td>Timer begins again</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Read after inactivity</td>
+<td>✅ Success</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1639,7 +1635,7 @@ off-chain strategies to guarantee your privacy.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../getting-started/usage-example/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Usage Example">
+          <a href="../deployment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deployment">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1649,20 +1645,20 @@ off-chain strategies to guarantee your privacy.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Usage Example
+                Deployment
               </div>
             </div>
           </a>
         
         
           
-          <a href="../role/" class="md-footer__link md-footer__link--next" aria-label="Next: Role">
+          <a href="../../contracts/zaphenath/" class="md-footer__link md-footer__link--next" aria-label="Next: Zaphenath">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Role
+                Zaphenath
               </div>
             </div>
             <div class="md-footer__button md-icon">
