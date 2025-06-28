@@ -9,11 +9,16 @@ contract Zaphenath {
     mapping(bytes32 => KeyData) private keys;
 
     event KeyCreated(bytes32 indexed keyId, address indexed owner);
-    event KeyDeleted(bytes32 indexed keyId);
-    event KeyUpdated(bytes32 indexed keyId);
-    event Pinged(bytes32 indexed keyId, uint256 timestamp);
+    event KeyDeleted(bytes32 indexed keyId, address indexed owner);
+    event KeyUpdated(bytes32 indexed keyId, address indexed owner);
+    event Pinged(
+        bytes32 indexed keyId,
+        address indexed owner,
+        uint256 timestamp
+    );
     event CustodianUpdated(
         bytes32 indexed keyId,
+        address indexed owner,
         address indexed user,
         Role role,
         bool canPing
@@ -87,7 +92,7 @@ contract Zaphenath {
         key.data = newData;
         key.timeout = newTimeout;
 
-        emit KeyUpdated(keyId);
+        emit KeyUpdated(keyId, owner);
     }
 
     function ping(
@@ -104,7 +109,7 @@ contract Zaphenath {
         );
 
         key.lastPing = block.timestamp;
-        emit Pinged(keyId, block.timestamp);
+        emit Pinged(keyId, owner, block.timestamp);
     }
 
     function readKey(
@@ -139,7 +144,7 @@ contract Zaphenath {
     {
         bytes32 fullKey = getFullKey(keyId, owner);
         delete keys[fullKey];
-        emit KeyDeleted(keyId);
+        emit KeyDeleted(keyId, owner);
     }
 
     function setCustodian(
@@ -155,7 +160,7 @@ contract Zaphenath {
     {
         bytes32 fullKey = getFullKey(keyId, owner);
         keys[fullKey].custodians[user] = Custodian(role, canPing);
-        emit CustodianUpdated(keyId, user, role, canPing);
+        emit CustodianUpdated(keyId, owner, user, role, canPing);
     }
 
     function removeCustodian(
@@ -169,6 +174,6 @@ contract Zaphenath {
     {
         bytes32 fullKey = getFullKey(keyId, owner);
         delete keys[fullKey].custodians[user];
-        emit CustodianUpdated(keyId, user, Role.None, false);
+        emit CustodianUpdated(keyId, owner, user, Role.None, false);
     }
 }
