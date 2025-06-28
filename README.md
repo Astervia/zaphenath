@@ -79,12 +79,12 @@ You'll see detailed logs thanks to `console.log` statements.
 
 ## 🔐 Roles
 
-| Role   | Description                                                     |
-| ------ | --------------------------------------------------------------- |
-| Owner  | Full control, set custodians and read before timeout if allowed |
-| Writer | Can update or delete the key                                    |
-| Reader | Can read after timeout (or before, if allowed)                  |
-| None   | No access                                                       |
+| Role   | Description                                    |
+| ------ | ---------------------------------------------- |
+| Owner  | Full control, set custodians                   |
+| Writer | Can update or delete the key                   |
+| Reader | Can read after timeout (or before, if allowed) |
+| None   | No access                                      |
 
 Use `setCustodian()` and `removeCustodian()` to manage roles.
 
